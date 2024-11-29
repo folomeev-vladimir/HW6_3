@@ -11,12 +11,12 @@ CJSCore::Init(array('ajax'));
 // Устанавливаем уникальный идентификатор для AJAX-запроса
 $sidAjax = 'testAjax';
 
-// Проверяем, является ли запрос AJAX-запросом с указанным идентификатором
+// Проверяем, является ли запрос AJAX запросом с указанным идентификатором
 if(isset($_REQUEST['ajax_form']) && $_REQUEST['ajax_form'] == $sidAjax){
    // Перезапускаем буфер вывода
    $GLOBALS['APPLICATION']->RestartBuffer();
 
-   // Возвращаем JSON-ответ с результатом
+   // Возвращаем JSON ответ с результатом
    echo CUtil::PhpToJSObject(array(
             'RESULT' => 'HELLO',
             'ERROR' => ''
@@ -52,7 +52,7 @@ if(isset($_REQUEST['ajax_form']) && $_REQUEST['ajax_form'] == $sidAjax){
       );
    }
 
-   // Функция для обработки ответа AJAX-запроса
+   // Функция для обработки ответа AJAX запроса
    function DEMOResponse (data){
       // Выводим отладочную информацию
       BX.debug('AJAX-DEMOResponse ', data);
